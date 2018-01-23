@@ -1,6 +1,7 @@
 package com.eshop.rest;
 
 import com.eshop.model.Product;
+import com.eshop.payload.ProductPayload;
 import com.eshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,12 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getProducts(){
+    public List<ProductPayload> getProducts() {
         return productService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ProductPayload getProductById(@PathVariable("id") int id) {
+        return productService.findByProductId(id);
     }
 }
