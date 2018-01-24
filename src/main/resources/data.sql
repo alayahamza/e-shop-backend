@@ -24,4 +24,13 @@ INSERT INTO PRODUCT VALUES (18, 'Product 18 description', 1832, 'Product 18', 2)
 INSERT INTO PRODUCT VALUES (19, 'Product 19 description', 1932, 'Product 19', 3);
 INSERT INTO PRODUCT VALUES (20, 'Product 20 description', 2032, 'Product 20', 4);
 INSERT INTO PRODUCT VALUES (21, 'Product 21 description', 2132, 'Product 21', 1);
-INSERT INTO PRODUCT VALUES (22, 'Product 22 description', 2232, 'Product 22', 2);
+INSERT INTO PRODUCT VALUES (22, 'Product 22 description', 2232, 'Product 22', 1);
+INSERT INTO PRODUCT VALUES (23, 'Product 23 description', 2332, 'Product 23', 1);
+INSERT INTO PRODUCT VALUES (24, 'Product 24 description', 2432, 'Product 24', 1);
+INSERT INTO PRODUCT VALUES (25, 'Product 25 description', 2532, 'Product 25', 1);
+INSERT INTO PRODUCT VALUES (26, 'Product 26 description', 2632, 'Product 26', 1);
+INSERT INTO PRODUCT VALUES (27, 'Product 27 description', 2732, 'Product 27', 1);
+INSERT INTO PRODUCT VALUES (28, 'Product 28 description', 2832, 'Product 28', 1);
+INSERT INTO PRODUCT VALUES (29, 'Product 29 description', 2932, 'Product 29', 1);
+INSERT INTO PRODUCT VALUES (30, 'Product 30 description', 3032, 'Product 30', 1);
+INSERT INTO PRODUCT VALUES (31, 'Product 31 description', 3132, 'Product 31', 1);
