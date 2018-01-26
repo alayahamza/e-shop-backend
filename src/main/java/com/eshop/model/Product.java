@@ -1,6 +1,5 @@
 package com.eshop.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +22,8 @@ public class Product {
     private String description;
     @Column(name = "PRICE")
     private Double price;
+    @Column(name = "RATE")
+    private int rate;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CATEGORY_ID")
