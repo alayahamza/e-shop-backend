@@ -42,6 +42,7 @@ public class ProductService {
         productPayload.setTitle(product.getTitle());
         productPayload.setDescription(product.getDescription());
         productPayload.setPrice(product.getPrice());
+        productPayload.setRate(product.getRate());
         productPayload.setCategoryId(product.getCategory().getId());
         return productPayload;
     }

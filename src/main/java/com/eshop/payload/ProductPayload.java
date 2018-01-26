@@ -12,5 +12,6 @@ public class ProductPayload {
     private String title;
     private String description;
     private Double price;
+    private int rate;
     private int categoryId;
 }
