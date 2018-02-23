@@ -16,8 +16,11 @@ public class ProductService {
     @Autowired
     private IProductRepository productRepository;
 
-    public void saveOne(Product product) {
-        productRepository.saveAndFlush(product);
+    @Autowired
+    private CategoryService categoryService;
+
+    public ProductPayload saveOne(ProductPayload product) {
+        return convertToProductPayload(productRepository.saveAndFlush(convertPayloadToProduct(product)));
     }
 
     public List<ProductPayload> findAll() {
@@ -45,5 +48,32 @@ public class ProductService {
         productPayload.setRate(product.getRate());
         productPayload.setCategoryId(product.getCategory().getId());
         return productPayload;
+    }
+
+    private Product convertPayloadToProduct(ProductPayload productPayload) {
+        Product product = new Product();
+        product.setTitle(productPayload.getTitle());
+        product.setDescription(productPayload.getDescription());
+        product.setPrice(productPayload.getPrice());
+        product.setRate(productPayload.getRate());
+        product.setCategory(categoryService.findById(productPayload.getCategoryId()));
+        return product;
+    }
+
+    public ProductPayload updateProduct(ProductPayload product) {
+        Product productToUpdate = productRepository.findOne(product.getCategoryId());
+        productToUpdate.setTitle(product.getTitle());
+        productToUpdate.setCategory(categoryService.findById(product.getCategoryId()));
+        productToUpdate.setDescription(product.getDescription());
+        productToUpdate.setPrice(product.getPrice());
+        productToUpdate.setPrice(product.getPrice());
+        return convertToProductPayload(productRepository.saveAndFlush(productToUpdate));
+    }
+
+    public void deleteProduct(int id) {
+        Product productToDelete = productRepository.findOne(id);
+        if (productToDelete != null) {
+            productRepository.delete(productToDelete);
+        }
     }
 }

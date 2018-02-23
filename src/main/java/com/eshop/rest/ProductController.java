@@ -16,8 +16,13 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping
-    public void saveProduct(@RequestBody Product product) {
-        productService.saveOne(product);
+    public ProductPayload saveProduct(@RequestBody ProductPayload product) {
+        return productService.saveOne(product);
+    }
+
+    @PatchMapping
+    public ProductPayload updateProduct(@RequestBody ProductPayload product) {
+        return productService.updateProduct(product);
     }
 
     @GetMapping
@@ -28,5 +33,10 @@ public class ProductController {
     @GetMapping("/{id}")
     public ProductPayload getProductById(@PathVariable("id") int id) {
         return productService.findByProductId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable("id") int id) {
+        productService.deleteProduct(id);
     }
 }

@@ -38,4 +38,8 @@ public class CategoryService {
         }
         return categoryListPayload;
     }
+
+    public Category findById(int categoryId) {
+        return categoryRepository.findOne(categoryId);
+    }
 }
