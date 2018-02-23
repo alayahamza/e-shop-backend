@@ -25,7 +25,7 @@ public class Product {
     @Column(name = "RATE")
     private int rate;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CATEGORY_ID")
     private Category category;
 }
