@@ -61,7 +61,7 @@ public class ProductService {
     }
 
     public ProductPayload updateProduct(ProductPayload product) {
-        Product productToUpdate = productRepository.findOne(product.getCategoryId());
+        Product productToUpdate = productRepository.findOne(product.getId());
         productToUpdate.setTitle(product.getTitle());
         productToUpdate.setCategory(categoryService.findById(product.getCategoryId()));
         productToUpdate.setDescription(product.getDescription());
